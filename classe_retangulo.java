@@ -18,6 +18,8 @@ public class Main {
 			
 			area = Math.abs((canto_ID.x - canto_SE.x) * (canto_SE.y - canto_ID.y));
 		}
+		
+		public FillRect(Retangulo rect, )
 
 	}
 	
