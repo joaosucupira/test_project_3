@@ -1,47 +1,50 @@
+/** Projeto nº3: Implementando formas no espaço **/
 
 public class Main {
+	// Classe auxiliar para simular o plano cartesiano.
 	public static class Coordenada{
-		int x;
-		int y;
+		// Uso float para receber coordenadas pois ao calcular centros e distâncias
+		// é uma recorrência frequente, porém, caso queira trabalhar com imagens 
+		// e matrizes precisarei trabalhar com inteiros para conseguir percorrer 
+		// as posições dos dados da matriz.
+		
+		float x;
+		float y;
 	}
 	
+	// Classe geral contendo os cantos que definem qualquer retângulo e o valor de sua área.
 	public static class Retangulo{
-		Coordenada canto_SE = new Coordenada();
-		Coordenada canto_ID = new Coordenada();
-		int area;
+		Coordenada canto_SE = new Coordenada(); // canto SUPERIOR ESQUERDO.
+		Coordenada canto_ID = new Coordenada(); // canto INFERIOR DIREITO.
+		Coordenada centro = new Coordenada(); // ponto central do retangulo.
+		int area; // área do retangulo.
+		
+		
+		// Objeto que facilita a criação de retângulos e contém algumas
+		// informações obtidas pela posição de seus cantos opostos.
 		
 		public Retangulo(int xID, int yID, int xSE, int ySE) {
+			// Argumentos x e y fazem referência a dados de coordenada.
+			// O sufixo ID quer dizer INFERIOR DIREITO e SE diz SUPERIOR ESQUERDO.
 			canto_ID.x = xID;
 			canto_SE.x = xSE;
 			canto_SE.y = ySE;
 			canto_ID.y = yID;
 			
+			centro.x = (xID - xSE) / 2;
+			centro.y = (ySE - xID) / 2;
+			
+			// Apenas nos interessa o valor absoluto da área.
 			area = Math.abs((canto_ID.x - canto_SE.x) * (canto_SE.y - canto_ID.y));
+			
 		}
-		
-		public FillRect(Retangulo rect, )
+
 
 	}
 	
     public static void main(String[] args) {
 
-//    	rect_A.canto_ID.x = 1;
-//    	rect_A.canto_ID.y = 2;
-//    	rect_A.canto_SE.x = 3;
-//    	rect_A.canto_SE.y = 4;
     	
-//    	Retangulo rect_A = new Retangulo(1,2,3,4);
-//    	
-//    	Retangulo rect_B = new Retangulo(7,11,13,19);
-    	
-    	int n_retangulos = 10;
-    	Retangulo[] rects = new Retangulo[n_retangulos];
-    	
-    	int i = 0;
-    	while(i < n_retangulos) {
-    		rects[i] = new Retangulo(i,i,i*3,i*2);
-    		System.out.println("Area do retangulo "+i+" = "+rects[i].area);
-    		i++;
     	}
     	
     	
